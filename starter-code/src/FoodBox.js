@@ -1,12 +1,11 @@
 import React, {Component} from React;
 import 'bulma/css/bulma.css';
 import './App.css';
-import Main from './Main.js';
 
 class FoodBox extends Component{
 
       render(){
-        console.log('-=-=-=-=-=-=-=-=-', this.props)
+        console.log('-=-=-=-=-=-=-=-=-', this.props.theFoodForThisParticularFoodBox)
         
         
         
@@ -21,8 +20,8 @@ class FoodBox extends Component{
     <div className="media-content">
       <div className="content">
         <p>
-          <strong>Pizza</strong> <br />
-          <small>400 cal</small>
+          <strong>{this.props.theFoodForThisParticularFoodBox.name}</strong> <br />
+          <small>{this.props.theFoodForThisParticularFoodBox.calories}</small>
         </p>
       </div>
     </div>
