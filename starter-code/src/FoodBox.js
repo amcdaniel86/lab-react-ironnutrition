@@ -4,9 +4,26 @@ import './App.css';
 
 class FoodBox extends Component{
 
+        state = {
+            quantity: 1,
+
+
+
+        }
+
+        updateQuantity = (theEvent) =>{
+
+          this.setState({[theEvent.target.id]: theEvent.target.value}, ()=>{
+            // how to use a variable as a key in an object, is put it in square brackets.
+
+          })
+
+      }
+
+
+
       render(){
-        console.log('-=-=-=-=-=-=-=-=-', this.props.theFoodForThisParticularFoodBox)
-        
+        console.log('-=-=-=-=-=-=-=');      
         
         
         return(
@@ -29,13 +46,16 @@ class FoodBox extends Component{
       <div className="field has-addons">
         <div className="control">
           <input
+            id ="quantity"
             className="input"
             type="number" 
-            value="1"
+            value={this.state.quantity}
+            onChange={()e => this.updateQuantity(e)}
           />
         </div>
         <div className="control">
-          <button className="button is-info">
+          <button onClick={() => this.props.whatToDoWhenIClickTheButton(this.props.theFoodForThisParticularFoodBox)} className="button is-info">
+          {/* props communicate variables between components. */}
             +
           </button>
         </div>

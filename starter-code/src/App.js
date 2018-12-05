@@ -12,6 +12,7 @@ class App extends Component {
       <div className="App">
         
         <FoodBox />
+        {/* <FoodBox /> establishes parent child relationship between 2 components.  */}
 
       </div>
     );
